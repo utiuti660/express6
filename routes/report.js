@@ -3,7 +3,7 @@ var express = require('express');
  const request = require('request');
 
  router.get('/', async(req, res) =>{
-    request('https://dog.ceo/dog-api//v1/images/search',function(error,response,body){
+    request('https://dog.ceo/api/breeds/image/random/search',function(error,response,body){
       if(!error && response.statusCode == 200) {
       const data= JSON.parse(body);
       res.json(data);
